@@ -1,6 +1,8 @@
 <div class="container">
-	<h1>The Home View!</h1>
+	<h1>Bookshelf</h1>
+	Search: <input ng-model="query"></input>
+	<button type="button" class="btn btn-primary" ng-click="genre = {genre:'action'}">Action</button>
 	<ul>
-		<li ng-repeat="book in books">{{book}}</li>
+		<li ng-repeat="book in books | filter:query | filter:genre">{{book.title}}</li>
 	</ul>
 </div>

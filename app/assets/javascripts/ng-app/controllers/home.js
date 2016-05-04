@@ -1,4 +1,6 @@
 angular.module('myApp')
-	.controller('HomeCtrl', function ($scope) {
-			$scope.books = ['Angular', 'Rails 4.1', 'UI Router', 'Together!!'];
+	.controller('HomeCtrl', function ($scope, $http) {
+		$http.get('/api/v1/books/.json').success(function(data) {
+	    $scope.books = data;
+	  });
 	});
