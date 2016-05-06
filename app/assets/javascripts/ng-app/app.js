@@ -12,6 +12,16 @@ angular
 				templateUrl: 'home.html',
 				controller: 'HomeCtrl'
 			})
+			.state('show', {
+				url: '/books/:id',
+				templateUrl: 'show.html',
+				controller: "HomeCtrl"
+			})
+			.state('new', {
+				url: '/books/new/',
+				templateUrl: 'new.html',
+				controller: "HomeCtrl"
+			})
 			.state('dashboard', {
 					abstract: true,
 					url: '/dashboard',

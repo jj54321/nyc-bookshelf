@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #     resources :books
   #   end
   # end
-  resources :books, only: [:index], defaults: {format: :json}
+  resources :books, only: [:index, :show, :edit, :new, :create], defaults: {format: :json}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

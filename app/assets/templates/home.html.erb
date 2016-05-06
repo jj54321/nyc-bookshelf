@@ -18,8 +18,8 @@
     <input type="checkbox" autocomplete="off"> Stuff
   </label>
 </div>
-	<!-- <button type="button" class="btn btn-primary" ng-click="genre = {genre:'action'}">Action</button> -->
 	<ul>
-		<li ng-repeat="book in books | filter:query | filter:genre">{{book.title}}</li>
+		<li ng-repeat="book in books | filter:query | filter:genre"><a ui-sref="show">{{book.title}}</a></li>
 	</ul>
+			<a ui-sref="new">new</a>
 </div>
