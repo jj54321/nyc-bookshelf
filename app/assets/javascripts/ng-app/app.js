@@ -10,17 +10,17 @@ angular
 			.state('home', {
 				url: '/',
 				templateUrl: 'home.html',
-				controller: 'HomeCtrl'
+				controller: 'HomeCtrl as ctrl'
 			})
 			.state('show', {
 				url: '/books/:id',
 				templateUrl: 'show.html',
-				controller: "HomeCtrl"
+				controller: "HomeCtrl as ctrl"
 			})
 			.state('new', {
 				url: '/books/new/',
 				templateUrl: 'new.html',
-				controller: "HomeCtrl"
+				controller: "HomeCtrl as ctrl"
 			})
 			.state('dashboard', {
 					abstract: true,

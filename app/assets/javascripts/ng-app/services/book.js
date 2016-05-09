@@ -6,9 +6,10 @@ angular
   service.all = function () {
       return $http.get(getUrl);
     };
-  // service.find = function (book) {
-  //     return $http.get(getUrl + book);
-  //   };
+  service.find = function (book) {
+      var find_url = getUrl + String(book);
+      return $http.get(find_url);
+    };
   service.create = function (book) {
     return $http.post(getUrl, book);
   };

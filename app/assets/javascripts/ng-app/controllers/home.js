@@ -1,5 +1,9 @@
 angular.module('myApp')
 	.controller('HomeCtrl', function ($scope, BookModel, $stateParams) {
+
+		var ctrl = this;
+
+
 		function getBooks() {
 			BookModel.all()
 				.then(function (result) {
@@ -13,14 +17,14 @@ angular.module('myApp')
 
 
 
-	// function getBook() {
-	// 	BookModel.find($stateParams.id).then(function (result){
-	// 		$scope.book = result[0].data;
-	// 	});
-	// }
-	// $scope.book = [];
-	// $scope.getBook = getBook;
-	// getBook();
+	function getBook() {
+		BookModel.find($stateParams.id).then(function (result){
+			$scope.book = result.data;
+		});
+	}
+	$scope.book = "";
+	$scope.getBook = getBook;
+	getBook();
 
 
 	function createBook(book) {
@@ -31,11 +35,13 @@ angular.module('myApp')
 	      });
 	  }
 	function initCreateForm() {
-	    $scope.newBook = { name: '', author: '' };
+	    ctrl.newBook = { title: '', author: '' };
 	  }
-	$scope.createBook = createBook;
+	ctrl.createBook = createBook;
 	  initCreateForm();
 	})
+
+
 
 
 
