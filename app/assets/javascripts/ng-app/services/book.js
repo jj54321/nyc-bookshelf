@@ -1,7 +1,7 @@
 angular
 .module('myApp')
 .service('BookModel', function ($http) {
-  var service = this,
+    var service = this,
   getUrl = 'http://localhost:3000/books/'
   service.all = function () {
       return $http.get(getUrl);
@@ -12,5 +12,8 @@ angular
     };
   service.create = function (book) {
     return $http.post(getUrl, book);
+  };
+  service.destroy = function (bookId) {
+    return $http.delete(getUrl + bookId);
   };
   })

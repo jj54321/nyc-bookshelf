@@ -22,6 +22,11 @@ angular
 				templateUrl: 'new.html',
 				controller: "HomeCtrl as ctrl"
 			})
+			.state('edit', {
+				url: '/books/edit/',
+				templateUrl: 'edit.html',
+				controller: "HomeCtrl as ctrl"
+			})
 			.state('dashboard', {
 					abstract: true,
 					url: '/dashboard',

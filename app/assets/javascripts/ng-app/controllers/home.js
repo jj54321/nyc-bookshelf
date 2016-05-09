@@ -1,7 +1,8 @@
 angular.module('myApp')
-	.controller('HomeCtrl', function ($scope, BookModel, $stateParams) {
+	.controller('HomeCtrl', function ($scope, BookModel, $stateParams, $state) {
 
 		var ctrl = this;
+
 
 
 		function getBooks() {
@@ -31,15 +32,24 @@ angular.module('myApp')
 	    BookModel.create(book)
 	      .then(function (result) {
 	        initCreateForm();
-	        getBooks();
+	        $state.go('home');
 	      });
 	  }
 	function initCreateForm() {
-	    ctrl.newBook = { title: '', author: '' };
+	    ctrl.newBook = { title: "", author: "" };
 	  }
 	ctrl.createBook = createBook;
 	  initCreateForm();
-	})
+
+	function deleteBook(bookId) {
+    BookModel.destroy(bookId)
+      .then(function (result) {
+        $state.go('home');
+      });
+  }
+ctrl.deleteBook = deleteBook;
+
+})
 
 
 
