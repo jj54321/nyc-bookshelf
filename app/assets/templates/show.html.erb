@@ -2,6 +2,13 @@
   {{book.title}}
   {{book.author}}
   {{book.genre}}
-  {{book.votes}}
+  <!-- {{book.votes}} -->
+
+    <button type="button" class="btn btn-primary" ng-click="ctrl.VoteBook(ctrl.newVote)">Upvote</button>
+    <span>
+      votes: {{book.votes.length}}
+    </span>
+
   <button type="button" class="close" ng-click="ctrl.deleteBook(book.id)">×</button>
+
 </body>

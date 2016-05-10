@@ -1,5 +1,5 @@
 angular.module('myApp')
-	.controller('HomeCtrl', function ($scope, BookModel, $stateParams, $state) {
+	.controller('HomeCtrl', function ($scope, BookModel, VoteModel, $stateParams, $state) {
 
 		var ctrl = this;
 
@@ -49,7 +49,22 @@ angular.module('myApp')
   }
 ctrl.deleteBook = deleteBook;
 
+function VoteBook(newVote) {
+		VoteModel.create(newVote)
+			.then(function (result) {
+				initCreateForm();
+					getBook();
+			});
+	}
+function initCreateForm() {
+		ctrl.newVote = { user_id: "Going to have users", book_id: $stateParams.id };
+	}
+ctrl.VoteBook = VoteBook;
+	initCreateForm();
 })
+
+
+
 
 
 
