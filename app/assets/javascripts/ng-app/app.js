@@ -3,7 +3,8 @@ angular
 	.module('myApp', [
 		'ngAnimate',
 		'ui.router',
-		'templates'
+		'templates',
+		'Devise'
 	])
 	.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 		$stateProvider
@@ -11,6 +12,16 @@ angular
 				url: '/',
 				templateUrl: 'home.html',
 				controller: 'HomeCtrl as ctrl'
+			})
+			.state('login', {
+				url: '/login',
+				templateUrl: 'devise/_login.html',
+				controller: 'AuthCtrl'
+			})
+			.state('register', {
+				url: '/register',
+				templateUrl: 'devise/_register.html',
+				controller: 'AuthCtrl'
 			})
 			.state('show', {
 				url: '/books/:id',

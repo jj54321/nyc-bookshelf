@@ -1,25 +1,5 @@
-<div class="container">
-	<h1>Bookshelf</h1>
+About..
 
-	<form class="form-search">
-    <div class="input-append">
-        <input ng-model='query' class="span2 search-query">
-        <button type="submit" class="btn">Search</button>
-    </div>
-</form>
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active">
-    <input type="checkbox" checked autocomplete="off" ng-click="genre = {genre:'action'}"> Action
-  </label>
-  <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off" ng-click="genre = {genre:'fantasy'}"> Fantasy
-  </label>
-  <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off"> Stuff
-  </label>
-</div>
-	<ul>
-		<li ng-repeat="book in books | filter:query | filter:genre"><a ui-sref="show({id: book.id})">{{book.title}}</a></li>
-	</ul>
-			<a ui-sref="new">new</a>
-</div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
