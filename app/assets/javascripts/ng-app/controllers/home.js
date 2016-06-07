@@ -32,11 +32,11 @@ angular.module('myApp')
 	    BookModel.create(book)
 	      .then(function (result) {
 	        initCreateForm();
-	        $state.go('home');
+	        $state.go('dashboard.one');
 	      });
 	  }
 	function initCreateForm() {
-	    ctrl.newBook = { title: "", author: "" };
+	    ctrl.newBook = { title: "", author: "", genre: "" };
 	  }
 	ctrl.createBook = createBook;
 	  initCreateForm();
@@ -62,6 +62,8 @@ function initCreateForm() {
 ctrl.VoteBook = VoteBook;
 	initCreateForm();
 })
+
+
 
 
 

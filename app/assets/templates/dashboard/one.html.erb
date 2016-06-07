@@ -14,9 +14,9 @@
   <label class="btn btn-primary">
     <input type="checkbox" autocomplete="off" ng-click="genre = {genre:'fantasy'}"> Fantasy
   </label>
-  <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off" ng-click="genre = genre"> All
-  </label>
+	<label class="btn btn-primary">
+		<input type="checkbox" autocomplete="off" ng-click="getAll()"> All
+	</label>
 </div>
 	<ul>
 		<li ng-repeat="book in books | filter:query | filter:genre"><a ui-sref="show({id: book.id})">{{book.title}} Votes: {{book.votes.length}}</a></li>

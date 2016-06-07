@@ -45,7 +45,8 @@ angular
 			})
 			.state('dashboard.one', {
 							url: '',
-							templateUrl: 'dashboard/one.html'
+							templateUrl: 'dashboard/one.html',
+							controller: "HomeCtrl as ctrl"
 					})
 					.state('dashboard.two', {
 							url: '/two',
