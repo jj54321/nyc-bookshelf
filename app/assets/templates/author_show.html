@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Authors</h1>
+	<h1>Books In {{author.name}}</h1>
 
 	<form class="form-search">
     <div class="input-append">
@@ -8,8 +8,10 @@
     </div>
 </form>
 
-	<ul>
-		<li ng-repeat="author in authors | filter:query"><a ui-sref="authorShow({id: author.id})">{{author.name}}</a></li>
-	</ul>
 
+</div>
+	<ul>
+		<li ng-repeat="book in books | filter:query"><a ui-sref="show({id: book.id})">{{book.title}} Votes: {{book.votes.length}}</a></li>
+	</ul>
+			<a ui-sref="new">new</a>
 </div>

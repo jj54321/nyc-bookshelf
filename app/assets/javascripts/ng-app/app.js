@@ -33,6 +33,11 @@ angular
 				templateUrl: 'genre_show.html',
 				controller: "GenreCtrl as ctrl"
 			})
+			.state('authorShow', {
+				url: '/authors/:id',
+				templateUrl: 'author_show.html',
+				controller: "AuthorCtrl as ctrl"
+			})
 			.state('new', {
 				url: '/books/new/',
 				templateUrl: 'new.html',
@@ -60,7 +65,8 @@ angular
 					})
 					.state('dashboard.three', {
 							url: '/three',
-							templateUrl: 'dashboard/three.html'
+							templateUrl: 'dashboard/three.html',
+							controller: "AuthorCtrl as ctrl"
 					});
 
 		$urlRouterProvider.otherwise('/');
