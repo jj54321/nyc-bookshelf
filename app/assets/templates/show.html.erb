@@ -1,13 +1,13 @@
 <body ng-controller="HomeCtrl">
-  {{book.title}}
-  {{book.author}}
-  {{book.genre}}
+  Title: {{book.title}} <br>
+  Author:{{book.author.name}} <br>
+  Genre: {{book.genre.name}}  <br>
 
     <button type="button" class="btn btn-primary" ng-click="ctrl.VoteBook(ctrl.newVote)">Upvote</button>
     <span>
       votes: {{book.votes.length}}
     </span>
 
-  <button type="button" class="close" ng-click="ctrl.deleteBook(book.id)">×</button>
+  <button type="button" class="close" ng-click="ctrl.deleteBook(book.id)">Delete</button>
 
 </body>

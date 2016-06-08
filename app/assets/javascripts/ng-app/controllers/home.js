@@ -20,6 +20,7 @@ angular.module('myApp')
 
 	function getBook() {
 		BookModel.find($stateParams.id).then(function (result){
+			debugger;
 			$scope.book = result.data;
 		});
 	}

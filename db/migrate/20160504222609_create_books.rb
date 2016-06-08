@@ -2,9 +2,8 @@ class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
       t.string :title
-      t.string :author
-      t.string :genre
-      t.integer :votes
+      t.integer :author_id
+      t.integer :genre_id
 
       t.timestamps
     end

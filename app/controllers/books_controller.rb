@@ -7,14 +7,16 @@ class BooksController < ApplicationController
     end
 
     def show
-      respond_with(Book.find(params[:id]))
+      respond_with(Book.find(params[:id]).to_json(:include => [:genre, :author, :votes]))
     end
 
     def create
       @book = Book.new(book_params)
+      @book.genre = Genre.find_or_create_by(name: params[:genre])
+      @book.author = Author.find_or_create_by(name: params[:author])
       if @book.save
         respond_to do |format|
-          format.json { render :json => @book }
+          format.json { render :json => @book.to_json(:include => [:genre, :author]) }
         end
       end
     end
