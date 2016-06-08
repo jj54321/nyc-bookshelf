@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
     def index
       @books = Book.all
-      respond_with(@books)
+      respond_with(@books.to_json(:include => [:votes]))
     end
 
     def show

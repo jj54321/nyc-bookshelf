@@ -7,20 +7,20 @@
         <button type="submit" class="btn">Search</button>
     </div>
 </form>
-<div class="btn-group" data-toggle="buttons">
+<!-- <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary active">
-    <input type="checkbox" checked autocomplete="off" ng-click="genre = {genre:'action'}"> Action
+    <input type="checkbox" checked autocomplete="off" ng-click="book.vote.user_I = {genre:'action'}"> Action
   </label>
   <label class="btn btn-primary">
     <input type="checkbox" autocomplete="off" ng-click="genre = {genre:'fantasy'}"> Fantasy
   </label>
 	<label class="btn btn-primary">
-		<input type="checkbox" autocomplete="off" ng-click="getAll()"> All
+		<input type="checkbox" autocomplete="off" ng-click="genre = undefined"> All
 	</label>
 
-</div>
+</div> -->
 	<ul>
-		<li ng-repeat="book in books | filter:query | filter:genre"><a ui-sref="show({id: book.id})">{{book.title}} Votes: {{book.votes.length}}</a></li>
+		<li ng-repeat="book in books | orderBy:'-votes.length' | filter:query"><a ui-sref="show({id: book.id})">{{book.title}}</a>votes: {{book.votes.length}}</li>
 	</ul>
 			<a ui-sref="new">new</a>
 </div>

@@ -2,7 +2,6 @@ angular.module('myApp')
 	.controller('AuthorCtrl', function ($scope, AuthorModel, $stateParams, $state, Auth) {
 
     function getAuthors() {
-      debugger;
 			AuthorModel.all()
 				.then(function (result) {
 					$scope.authors = result.data;

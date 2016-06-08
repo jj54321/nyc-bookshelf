@@ -1,15 +1,49 @@
 <form class="create-form" role="form" ng-submit="ctrl.createBook(ctrl.newBook)" novalidate>
   <div class="form-group">
     <label>Book Name</label>
-    <input type="text" class="form-control" ng-model="ctrl.newBook.title" placeholder="Enter name">
+    <input name="title" required="required" minlength="2" type="text" class="form-control" ng-model="ctrl.newBook.title" placeholder="Enter name">
   </div>
   <div class="form-group">
     <label>Book Author</label>
-    <input type="text" class="form-control" ng-model="ctrl.newBook.author" placeholder="Enter author">
+    <input name="author" required="required" minlength="2" type="text" class="form-control" ng-model="ctrl.newBook.author" placeholder="Enter author">
   </div>
   <div class="form-group">
     <label>Book Genre</label>
-    <input type="text" class="form-control" ng-model="ctrl.newBook.genre" placeholder="Enter genre">
+    <input name="genre" required="required" minlength="2" type="text" class="form-control" ng-model="ctrl.newBook.genre" placeholder="Enter genre">
   </div>
   <button type="submit" class="btn btn-info btn-lg">Create</button>
+
+<div ng-if="form.author.$touched">
+  <div ng-if="form.author.$touched && form.author.$error.required">
+      Author is required!
+  </div>
+
+  <div ng-if="form.author.$touched && form.author.$error.minlength">
+      Author must be longer than 2 characters!
+  </div>
+
+</div>
+
+<div ng-if="form.title.$touched">
+  <div ng-if="form.title.$touched && form.title.$error.required">
+      Title is required!
+  </div>
+
+  <div ng-if="form.title.$touched && form.title.$error.minlength">
+      Title must be longer than 2 characters!
+  </div>
+
+</div>
+
+<div ng-if="form.genre.$touched">
+  <div ng-if="form.genre.$touched && form.genre.$error.required">
+      Genre is required!
+  </div>
+
+  <div ng-if="form.genre.$touched && form.genre.$error.minlength">
+      Genre must be longer than 2 characters!
+  </div>
+
+</div>
+
 </form>

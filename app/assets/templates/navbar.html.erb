@@ -7,7 +7,7 @@
 
     <ul class="nav navbar-nav">
       <li><a href="/">Home</a></li>
-      <li ng-show="signedIn()"><a href="#/dashboard">Bookshelf</a></li>
+      <li ng-show="signedIn()"><a href="#/bookshelf">Bookshelf</a></li>
       <li ng-hide="signedIn()"><a href="#/login">Log In</a></li>
       <li ng-hide="signedIn()"><a href="#/register">Register</a></li>
       <li ng-show="signedIn()"><a href="#/">{{ user.email }}</a></li>

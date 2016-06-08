@@ -34,7 +34,7 @@ angular.module('myApp')
 	    BookModel.create(book)
 	      .then(function (result) {
 	        initCreateForm();
-	        $state.go('dashboard.one');
+	        $state.go('bookshelf.books');
 	      });
 	  }
 	function initCreateForm() {

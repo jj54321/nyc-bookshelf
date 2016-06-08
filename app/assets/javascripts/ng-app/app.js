@@ -48,24 +48,24 @@ angular
 				templateUrl: 'edit.html',
 				controller: "HomeCtrl as ctrl"
 			})
-			.state('dashboard', {
+			.state('bookshelf', {
 					abstract: true,
-					url: '/dashboard',
-					templateUrl: 'dashboard/layout.html'
+					url: '/bookshelf',
+					templateUrl: 'bookshelf/layout.html'
 			})
-			.state('dashboard.one', {
+			.state('bookshelf.books', {
 							url: '',
-							templateUrl: 'dashboard/one.html',
+							templateUrl: 'bookshelf/books.html',
 							controller: "HomeCtrl as ctrl"
 					})
-					.state('dashboard.two', {
-							url: '/two',
-							templateUrl: 'dashboard/two.html',
+					.state('bookshelf.genres', {
+							url: '/genres',
+							templateUrl: 'bookshelf/genres.html',
 							controller: "GenreCtrl as ctrl"
 					})
-					.state('dashboard.three', {
-							url: '/three',
-							templateUrl: 'dashboard/three.html',
+					.state('bookshelf.authors', {
+							url: '/authors',
+							templateUrl: 'bookshelf/authors.html',
 							controller: "AuthorCtrl as ctrl"
 					});
 
