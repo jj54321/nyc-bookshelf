@@ -28,6 +28,11 @@ angular
 				templateUrl: 'show.html',
 				controller: "HomeCtrl as ctrl"
 			})
+			.state('genreShow', {
+				url: '/genres/:id',
+				templateUrl: 'genre_show.html',
+				controller: "GenreCtrl as ctrl"
+			})
 			.state('new', {
 				url: '/books/new/',
 				templateUrl: 'new.html',
@@ -50,7 +55,8 @@ angular
 					})
 					.state('dashboard.two', {
 							url: '/two',
-							templateUrl: 'dashboard/two.html'
+							templateUrl: 'dashboard/two.html',
+							controller: "GenreCtrl as ctrl"
 					})
 					.state('dashboard.three', {
 							url: '/three',

@@ -1,9 +1,11 @@
 angular.module('myApp')
-	.controller('HomeCtrl', function ($scope, BookModel, VoteModel, $stateParams, $state) {
+	.controller('HomeCtrl', function ($scope, BookModel, VoteModel, $stateParams, $state, Auth) {
 
 		var ctrl = this;
 
-
+		Auth.currentUser().then(function (user){
+	    $scope.user = user;
+	  });
 
 		function getBooks() {
 			BookModel.all()
@@ -20,7 +22,6 @@ angular.module('myApp')
 
 	function getBook() {
 		BookModel.find($stateParams.id).then(function (result){
-			debugger;
 			$scope.book = result.data;
 		});
 	}
@@ -61,7 +62,9 @@ function initCreateForm() {
 		ctrl.newVote = { user_id: "Going to have users", book_id: $stateParams.id };
 	}
 ctrl.VoteBook = VoteBook;
-	initCreateForm();
+
+initCreateForm();
+
 })
 
 

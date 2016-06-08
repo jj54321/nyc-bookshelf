@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # end
   resources :books, defaults: {format: :json}
   resources :votes, only: [:create], defaults: {format: :json}
+  resources :genres, only: [:index, :show], defaults: {format: :json}
 
 
   devise_for :users
